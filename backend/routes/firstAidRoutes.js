@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const FirstAid = require("../models/firstaidmodel");
+const FirstAid = require("../models/firstAidModel");
 
 // Get all topics
 router.get("/topics", async (req, res) => {
