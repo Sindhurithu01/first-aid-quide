@@ -18,6 +18,15 @@ mongoose.connect('mongodb://localhost:27017/firstaid', {
 })
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error(err));
+const path = require('path');
+
+// Serve static files from the Angular app
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Handle all other routes and return Angular's index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
