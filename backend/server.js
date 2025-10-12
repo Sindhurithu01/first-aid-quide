@@ -24,13 +24,15 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle all other routes and return Angular's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.send('First Aid Guide Backend is Running!');
 });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
