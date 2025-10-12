@@ -1,0 +1,15 @@
+<div *ngIf="topic">
+  <h2>{{ topic.title }}</h2>
+  <p><strong>Description:</strong> {{ topic.description }}</p>
+
+  <div *ngIf="topic.steps && topic.steps.length > 0">
+    <h3>Steps:</h3>
+    <ol>
+      <li *ngFor="let step of topic.steps">{{ step }}</li>
+    </ol>
+  </div>
+</div>
+
+<div *ngIf="!topic">
+  <p>Loading topic details or topic not found.</p>
+</div>

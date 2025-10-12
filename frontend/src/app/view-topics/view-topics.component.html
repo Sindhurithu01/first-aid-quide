@@ -1,0 +1,5 @@
+<div *ngFor="let topic of topics" style="margin-bottom:20px; border:1px solid #ccc; padding:10px;">
+  <h3>{{ topic.title }}</h3>
+  <p>{{ topic.description }}</p>
+  <button (click)="viewDetails(topic._id)">View Details</button>
+</div>

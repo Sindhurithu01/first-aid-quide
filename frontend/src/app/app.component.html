@@ -1,0 +1,16 @@
+
+<h2>First Aid Topics</h2>
+
+<div *ngIf="topics.length === 0">
+  <p>No topics found. Try refreshing or check backend connection.</p>
+</div>
+
+<ul *ngIf="topics.length > 0">
+  <li *ngFor="let topic of topics">
+    <strong>{{ topic.title }}</strong> - {{ topic.description }}
+    <ul>
+      <li *ngFor="let step of topic.steps">{{ step }}</li>
+    </ul>
+  </li>
+</ul>
+<router-outlet></router-outlet>

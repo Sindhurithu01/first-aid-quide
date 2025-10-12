@@ -1,0 +1,45 @@
+.topics-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.topics-container h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.topic-card {
+  background-color: #f7fafc;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(100, 100, 100, 0.1);
+  padding: 20px;
+  width: 250px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(100, 100, 100, 0.2);
+}
+
+.topic-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.topic-card p {
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
