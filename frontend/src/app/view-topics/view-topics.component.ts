@@ -32,6 +32,7 @@ export class TopicsComponent implements OnInit {
   }
 
   loadTopics(): void {
+    fetch('https://first-aid-quide-12.onrender.com/topics')
     this.firstAidService.getTopics().subscribe({
       next: (data: any) => {
         console.log('Fetched topics:', data);

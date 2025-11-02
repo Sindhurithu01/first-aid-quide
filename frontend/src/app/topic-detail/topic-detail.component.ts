@@ -194,6 +194,8 @@ export class TopicDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    fetch('https://first-aid-quide-12.onrender.com/topics')
+
     const topicId = this.route.snapshot.paramMap.get('id');
     console.log('Topic id from route:', topicId);
 
