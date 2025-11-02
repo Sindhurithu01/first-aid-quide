@@ -18,21 +18,25 @@ export class LoginComponent {
   // ✅ Inject HttpClient for API call
   constructor(private router: Router, private http: HttpClient) {}
 
-  onSubmit() {
-    const userData = { username: this.username, password: this.password };
+ onSubmit() {
+  const userData = { username: this.username, password: this.password };
 
-    // ✅ Replace localhost with your deployed backend URL
-    this.http.post('https://first-aid-quide-12.onrender.com/login', userData)
-      .subscribe({
-        next: (response: any) => {
-          console.log('Login successful:', response);
+  this.http.post('https://first-aid-quide-12.onrender.com/login', userData)
+    .subscribe({
+      next: (response: any) => {
+        console.log('Login response:', response);
+
+        // Check response for success
+        if (response.success) { // <- adjust based on your backend response
           this.router.navigate(['/view-topics']);
-        },
-        error: (error) => {
-          console.error('Login failed:', error);
-          alert('Invalid credentials or server error.');
+        } else {
+          alert('Invalid credentials!');
         }
-      });
-  }
+      },
+      error: (error) => {
+        console.error('Login failed:', error);
+        alert('Server error. Try again later.');
+      }
+    });
 }
-
+}
