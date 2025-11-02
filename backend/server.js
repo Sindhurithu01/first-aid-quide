@@ -10,11 +10,11 @@ const firstAidRoutes = require('./routes/firstAidRoutes');
 app.use('/api/first-aid', firstAidRoutes);
 
 // --- Serve Angular frontend ---
-app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Catch all other routes and return Angular's index.html
+// ✅ Fix: use "*" instead of /.*/
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/frontend/index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
