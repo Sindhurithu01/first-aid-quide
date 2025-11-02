@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class FirstaidService {
 
   // Replace with your backend URL
-  private apiUrl = 'http://localhost:3000/api/firstaid';
+  private apiUrl = 'http://first-aid-quide-12.onrender.com/api/firstaid';
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class FirstaidService {
 
   // Get topic by ID
   getTopicById(id: string) {
-  return this.http.get<any>(`http://localhost:3000/api/topics/${id}`);
+  return this.http.get<any>(`http://first-aid-quide-12.onrender.com/api/topics/${id}`);
 }
 
 }
