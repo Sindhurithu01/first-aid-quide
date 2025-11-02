@@ -8,13 +8,14 @@ import { Observable } from 'rxjs';
 export class FirstaidService {
 
   // Replace with your backend URL
-  private apiUrl = 'http://first-aid-quide-12.onrender.com/api/firstaid';
+  private apiUrl = 'https://first-aid-quide-12.onrender.com';
+
 
   constructor(private http: HttpClient) { }
 
   // Get all topics
   getTopics(): Observable<any> {
-    return this.http.get(`${this.apiUrl}`);
+    return this.http.get(`${this.apiUrl}/topics`);
   }
 
   // Get topic by ID
