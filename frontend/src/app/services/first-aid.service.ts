@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class FirstaidService {
 
   // Replace with your backend URL
-  private apiUrl = 'https://first-aid-quide-12.onrender.com';
+  private apiUrl = 'https://first-aid-quide-15.onrender.com';
 
 
   constructor(private http: HttpClient) { }

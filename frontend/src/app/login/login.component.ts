@@ -21,7 +21,7 @@ export class LoginComponent {
  onSubmit() {
   const userData = { username: this.username, password: this.password };
 
-  this.http.post('https://first-aid-quide-12.onrender.com/login', userData)
+  this.http.post('https://first-aid-quide-15.onrender.com/login', userData)
     .subscribe({
       next: (response: any) => {
         console.log('Login response:', response);
@@ -39,4 +39,8 @@ export class LoginComponent {
       }
     });
 }
+
+  goToViewTopics() {
+    this.router.navigate(['/view-topics']);
+  }
 }

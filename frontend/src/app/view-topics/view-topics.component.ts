@@ -64,4 +64,11 @@ export class TopicsComponent implements OnInit {
     console.log('Navigating to topic :', topicId);
     this.router.navigate(['/topic-detail', topicId]);
   }
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+  goToTopicDetail(topicId: string) {
+  this.router.navigate(['/topic-detail', topicId]);
+}
+
 }
