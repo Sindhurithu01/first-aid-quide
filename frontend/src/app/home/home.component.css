@@ -1,17 +1,12 @@
 .home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  text-align: center;
-  padding: 20px;
-  background: #f7fafc;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(100, 100, 100, 0.1);
-  max-width: 500px;
-  margin: 50px auto;
+  background: transparent !important; /* remove white background */
+  box-shadow: none !important;        /* remove shadow if any */
+  padding-left: 20px;                  /* reduce padding to move content left */
+  padding-right: 0;                   /* optional */
+  margin-left: 0;                    /* optional */
+  max-width: none;                   /* optional - expand width */
 }
+
 
 .home-container h1 {
   font-size: 3rem;
