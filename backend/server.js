@@ -10,11 +10,11 @@ const firstAidRoutes = require('./routes/firstAidRoutes');
 app.use('/api/first-aid', firstAidRoutes);
 
 // --- Serve Angular frontend ---
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public','browser')));
 
 // ✅ Fix: use "*" instead of /.*/
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public','browser', 'index.html'));
 });
 app.get('/', (req, res) => {
   res.send('✅ First Aid backend is live!');
