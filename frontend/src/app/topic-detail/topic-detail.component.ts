@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule } from '@angular/common/http';
 import { FirstaidService } from '../services/first-aid.service';
 
 @Component({
@@ -190,11 +190,12 @@ export class TopicDetailComponent implements OnInit {
 ];
   constructor(
     private route: ActivatedRoute,
-    private firstAidService: FirstaidService
+    private firstAidService: FirstaidService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
-     this.http.post('https://first-aid-quide-12.onrender.com/login')
+    
     const topicId = this.route.snapshot.paramMap.get('id');
     console.log('Topic id from route:', topicId);
 
